@@ -1,7 +1,7 @@
 /* Directives */
 
 
-angular.module('Spice.directives', [])
+angular.module('FreeAgent.directives', [])
 .directive('scrollOnClick', function() {
     return {
         restrict: 'A',

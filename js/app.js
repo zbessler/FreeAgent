@@ -1,11 +1,11 @@
 
 // Declare app level module which depends on filters, and services
-angular.module('Spice', [
+angular.module('FreeAgent', [
     'ngRoute',
-    'Spice.filters',
-    'Spice.services',
-    'Spice.directives',
-    'Spice.controllers'
+    'FreeAgent.filters',
+    'FreeAgent.services',
+    'FreeAgent.directives',
+    'FreeAgent.controllers'
 ])
 .constant('AppConfig', {
     'version': '3',
