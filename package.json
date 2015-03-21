@@ -1,0 +1,17 @@
+{
+  "name": "inreach",
+  "description": "Data on the main screen",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-concat": "^0.5.0",
+    "grunt-contrib-jshint": "0.10.x",
+    "grunt-contrib-uglify": "^0.3.3",
+    "grunt-contrib-watch": "^0.5.3",
+    "grunt-sass": "^0.14.0"
+  },
+  "scripts": {
+    "start": "node inreach_server.js"
+  }
+}

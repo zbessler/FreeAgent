@@ -1,0 +1,23 @@
+{
+  "name": "spice_boys",
+  "version": "0.0.0",
+  "homepage": "https://github.com/zbessler/spice_boys",
+  "authors": [
+    "zbessler@brandnetworksinc.com <zbessler@brandnetworksinc.com>"
+  ],
+  "main": "index.html",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-route": "~1.2.18",
+    "angular": "~1.2.18",
+    "angular-animate": "~1.2.18"
+  }
+}
