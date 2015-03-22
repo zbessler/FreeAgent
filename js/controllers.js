@@ -64,21 +64,19 @@ angular.module('FreeAgent.controllers', [])
 
 })
 .controller('team', function($scope) {
-  $scope.countries = ['United states'];
-  $scope.selectedCountries = 'Country';
-  $scope.states = ['New York', 'Massachusetts'];
-  $scope.selectedState = 'State';
-  $scope.cities = ['Rochester', 'NYC'];
-  $scope.selectedCity = 'City';
   $scope.sports = ['Volleyball', 'Baseball', 'Hockey'];
-  $scope.selectedSport = 'Sport';
+  $scope.selectedSport = '*Sport';
+  $scope.gameDates = ['July 23,1983', 'Dec 25, 2015'];
+  $scope.selectedGameDate = '*Date';
+  $scope.gameTimes = ['7:00pm','8:00pm'];
+  $scope.selectedGameTime = ['*Time'];
 
   $scope.positions = ['Hitter', 'Setter', 'Blocker'];
   $scope.selectedPosition = 'Position';
   $scope.skills = ['Recreation', 'Intermediate', 'Advanced'];
-  $scope.selectedSkill = 'Skill';
-  $scope.ages = ['16-20', '21-30', '30+'];
-  $scope.selectedAge = 'Age';
+  $scope.selectedSkill = 'Skill Level';
+  $scope.genders = ['Male', 'Female', 'Coed'];
+  $scope.selectedGender = 'Gender';
 
 });
 
