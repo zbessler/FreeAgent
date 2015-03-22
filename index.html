@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" ng-app='FreeAgent'>
 <head>
-    <title>Spice Boys Vineyards</title>
+    <title>FreeAgent</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
@@ -14,18 +14,19 @@
             content="" /> 
     <meta property="og:image" content="" /> 
 
-    <link rel='stylesheet' href='css/site.css?v=3' />       
-    <link rel='stylesheet' href='css/home.css?v=3' />    
-    <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,500italic,700,700italic' rel='stylesheet' type='text/css'>
+    <link rel='stylesheet' href='/css/site.css' />       
+    <link rel='stylesheet' href='/css/team.css' />    
+    <link rel='stylesheet' href='/css/matches.css' />    
+    <link rel='stylesheet' href='/css/splash.css' />    
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,300,300italic,400italic,500,500italic,700,700italic' rel='stylesheet' type='text/css'>
 
 </head>
 <body ng-controller='Main'>
-
+    <div ng-view></div>
 
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular.min.js"></script>
-    <script src="bower_components/angular-route/angular-route.js"></script>
-    <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.2.18.min.js"></script>
-    <script src="js/wine.min.js?v=3"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular-route.min.js"></script>
+    <script src="/js/wine.min.js?v=3"></script>
+
 </body>
 </html>

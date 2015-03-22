@@ -1,125 +1,64 @@
 @import "vars";
-body {
-    font-family: "Roboto";
-    margin: 0px;
-    padding: 0px;
-    background: url('../img/collage3_m.jpg');
-    background-attachment: fixed;
-    background-size: contain;
-    transition: all 2000ms linear;
-    overflow-x: hidden;
+body, html {
+    padding: 0;
+    margin: 0;
+    font-family: "Montserrat";
 }
-h1 {
-    color: $dark-brown;
+a {
+    text-decoration: none;
 }
 
-.sb-logo{
-    background-color: rgba(255,255,255,0.3);
-    border-radius: 1000px;
+
+.gradient-menu {
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    padding-left: 1.25em;
+}
+.gradient-menu:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.25em;
+    width: 1.6em;
+    height: 0.2em;
+    background: white;
+    box-shadow: 
+        0 0.4em 0 0 white,
+        0 0.8em 0 0 white;
+}
+
+.yellow-cta {
+    background-color: $yellow-cta;
+    color: black;
+
+    &:hover {
+        background-color: black;
+        color: white;
+    }
 }
 
 .header {
+    background-color: $blackish;
+    height: 80px;
+
+    .nav-logo {
+        padding: 20px;
+    }
+    .gradient-menu {
+        top: 25px;
+    }
+}
+.footer {
+    background-color: $blackish;
     height: 50px;
-    background-color: black;
-    width: 100%;
-    position: fixed;   
-    top: 0;
-    z-index: 50;
-    text-align: center;
-    transition: all 200ms linear;
 
-
-
-    .links {
-        margin: auto;
-    }
-    a {
-        color: white;
-        font-size: 16px;
-        font-weight: 500;
-        text-decoration: none;
-        text-align: center;
-        letter-spacing: 1px;
-        padding: 10px 6px;
-        display: inline-block;
-        position: relative;
-        top: 0px;
-        transition: all 200ms linear;
-    
-        &:hover {
-            top: 5px;
-            
-        }
+    .footer-logo {
+        padding: 10px;
     }
 }
-
-footer {
-    background-color: black;
-    color: white;
-    font-size: 10px;
-    padding: 10px;
-    text-align: center;
-
-    .share-btns {
-        display: inline-block;
-        margin-top: 10px;
-        
-        .twitter-share-button, #twitter-widget-0 {
-            width: 80px !important;
-            margin-bottom: 5px;
-        }
-        .fb-like {
-            display: inline !important;
-            bottom: 8px;
-        }
-        #___plusone_0 {
-            width: 67px !important;
-            bottom: 3px !important;
-            position: relative;
-        }
-        .pin-btn {
-            bottom: 5px;
-            position: relative;
-        }
-    }
-}
-
-
-
 
 @media only screen and (min-width: 1000px) {
-    body {
-        background: url('../img/collage4.jpg');
-    }
-    .header {
-        height: 100px;
-        background-color: $grayed;
-
-        a {
-            font-size: 22px;
-            padding: 30px 30px;
-        }
-        &.header2 {
-            height: 50px;
-            background-color: black;
-
-            a {
-                font-size: 19px;
-                color: $light-brown;
-                padding-top: 10px;
-            }
-        }
-    }
-    footer {
-        font-size: 12px;
-        text-align: left;
-
-        .share-btns {
-            float: right;
-            margin-top: 0px;
-        }
-    }
-    
 
 }
 

@@ -43,7 +43,7 @@ module.exports = function(grunt) {
 
     jshint: {
       all: {
-        src: ['**/**.js', '!js/lib/**', '!node_modules/**', '!bower_components/**', '!js/wine.min.js', '!js/wine.min.map']
+        src: ['**/**.js', '!js/lib/**', '!node_modules/**', '!**/bower_components/**', '!js/wine.min.js', '!js/wine.min.map']
       }
     },
 

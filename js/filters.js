@@ -1,6 +1,6 @@
 /* Filters */
 
 angular.module('FreeAgent.filters', [])
-.filter('SpiceFilter', function() {
+.filter('FreeFilter', function() {
 
 });

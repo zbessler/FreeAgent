@@ -2,6 +2,7 @@
 
 
 angular.module('FreeAgent.directives', [])
+/*
 .directive('scrollOnClick', function() {
     return {
         restrict: 'A',
@@ -67,4 +68,7 @@ angular.module('FreeAgent.directives', [])
             });
         }
     };
-});
+})
+
+*/;
+
