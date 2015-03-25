@@ -1,0 +1,40 @@
+<div class='match-page'>
+    <div class='header'>
+        <img class='nav-logo' src='/img/Nav_Logo_6a6a6a.png' />
+        <a class='gradient-menu' href='#'></a>
+    </div>
+
+    <div class='main-body'>
+        <div class='header-text'>
+            AVAILABLE AGENTS
+        </div>
+        <div class='body-text'>
+            CLICK AN AGENT IN THE LIST BELOW TO ASK THEM TO SUB FOR YOU.  WE WILL SEND THEM AN EMAIL AND NOTIFY YOU WHEN SOMEONE ACCEPTS.
+        </div>
+        <hr class='spacer' />
+
+        <div class='match' ng-repeat='m in matches'>
+            <img class='ball' ng-src='{{m.imgurl}}' />
+            <div class='left'>
+                <div class='name'>{{m.firstname}} {{m.lastname}}</div>
+                <div class='city'>City: {{m.city}}</div>
+                <div class='state'>State: {{m.state}}</div>
+                <div class='country'>Country: {{m.country}}</div>
+            </div>
+            <div class='right'>
+                <div class='sport'>{{m.sport}}</div>
+                <div class='age'>Age: {{m.age}}</div>
+                <div class='skill'>Skill Level: {{m.skill}}</div>
+                <div class='gender'>Gender: {{m.gender}}</div>
+            </div>
+            <a class='yellow-cta contact-btn'>Contact {{m.firstname}}</a>
+
+            <hr class='spacer' />
+        </div>
+
+    </div>
+
+    <div class='footer'>
+        <img class='footer-logo' src='/img/Icon_Logo_6a6a6a.png' />
+    </div>
+</div>

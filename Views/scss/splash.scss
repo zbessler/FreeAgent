@@ -1,0 +1,88 @@
+@import "vars";
+.splash-page {
+    background: -webkit-radial-gradient(circle, #e39d21, #8f5121);
+
+    .ball {
+        display: block;
+        margin: 0 auto;
+          width: 625px;
+      height: 633px;
+      padding-top: 85px;
+    }
+    .nav-logo {
+        margin-top: 50px;
+        margin-left: 50px;
+        position: absolute;
+    }
+
+    .main-container {
+        text-align: center;
+        margin: auto;
+        width: 800px;
+        position: relative;
+        top: -575px;
+
+        .logo {
+            font-size: 55px;
+            color: yellow;
+        }
+        .body-text {
+            font-size: 29px;
+            padding-top: 0px;
+            padding-bottom: 40px;
+        }
+        .btn {
+            display: inline-block;
+            color: black;
+            font-size: 18px;
+            width: 160px;
+            padding: 12px 24px;
+            border: solid 2px black;
+            border-radius: 4px;
+
+            &:hover {
+                color: white;
+                background-color: black;
+            }
+        }
+        .agent {
+            margin-left: 15px;
+        }
+        .team {
+            margin-right: 10px;
+        }
+        .line-spacer {
+            height: 10px;
+            border-right: solid .07em black;
+            top: -1px;
+            position: relative;
+        }
+    }
+
+    .desc {
+        text-align: center;
+        position: relative;
+        top: -375px;
+    }
+    
+
+
+    //tablet
+    @media only screen and (min-width: 500px){
+
+    }
+
+    //tablet
+    @media only screen and (min-width: 700px){
+
+    }
+
+
+    // Desktop
+    @media only screen and (min-width: 1000px){
+
+    }
+    @media only screen and (min-width: 1180px){
+
+    }
+}

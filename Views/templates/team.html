@@ -1,0 +1,37 @@
+<div class='team-page'>
+    <div class='header'>
+        <img class='nav-logo' src='/img/Nav_Logo_6a6a6a.png' />
+        <a class='gradient-menu' href='#'></a>
+    </div>
+
+
+    <div class='main-body'>
+        <div class='header-text'>
+            SEARCH FOR AGENTS
+        </div>
+        <div class='body-text'>
+            TELL US ABOUT YOUR GAME AND WHAT KIND OF AGENT YOU NEED, THEN CLICK VIEW MATCHES TO SEE FREE AGENTS IN YOUR AREA.
+        </div>
+        <hr class='spacer' />
+        <div class='search-form'>
+            <select class='full-line' ng-model='selectedSports' ng-options='c for c in sports'><option style='display:none;' value="">*Sport</option></select>
+            <select ng-model='selectedGameDate' ng-options='c for c in gameDates'><option style='display:none;' value="">*Date</option></select>
+            <select ng-model='selectedGameTime' ng-options='c for c in gameTimes'><option style='display:none;' value="">*Time</option></select>
+
+            <hr />
+
+            <select class='third' ng-model='selectedPosition' ng-options='c for c in positions'><option style='display:none;' value="">Position</option></select>
+            <select class='third' ng-model='selectedSkill' ng-options='c for c in skills'><option style='display:none;' value="">Skill Level</option></select>
+            <select class='third' ng-model='selectedGender' ng-options='c for c in genders'><option style='display:none;' value="">Gender</option></select>
+
+            <div class='buttons'>
+                <a class='yellow-cta btn' href='#/matches'>VIEW MATCHES</a>
+            </div>
+        </div>
+    </div>
+
+
+    <div class='footer'>
+        <img class='footer-logo' src='/img/Icon_Logo_6a6a6a.png' />
+    </div>
+</div>
