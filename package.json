@@ -8,16 +8,40 @@
     "cookie-parser": "^1.3.4",
     "express": "^4.12.3",
     "express-session": "^1.10.4",
+    "fs": "0.0.2",
     "grunt": "~0.4.1",
     "grunt-contrib-concat": "^0.5.0",
     "grunt-contrib-jshint": "0.10.x",
     "grunt-contrib-uglify": "^0.3.3",
     "grunt-contrib-watch": "^0.5.3",
     "grunt-sass": "^0.14.0",
+
     "lodash": "^3.5.0",
-    "moment": "^2.9.0"
+    "main-bower-files": "^2.6.2",
+    "moment": "^2.9.0",
+    "sequelize": "^2.0.5"
   },
   "scripts": {
     "start": "node inreach_server.js"
+  },
+  "devDependencies": {
+    "gulp-develop-server": "^0.4.2",
+    "gulp-livereload": "^3.8.0",
+    "gulp-rename": "^1.2.0",
+    "path": "^0.11.14",
+    "run-sequence": "^1.0.2",
+    "gulp": "^3.8.11",
+    "gulp-autoprefixer": "^2.1.0",
+    "gulp-cachebust": "0.0.5",
+    "gulp-concat": "^2.5.2",
+    "gulp-html-replace": "^1.4.4",
+    "gulp-if": "^1.2.5",
+    "gulp-jshint": "^1.9.4",
+    "gulp-mocha": "^2.0.0",
+    "gulp-rimraf": "^0.1.1",
+    "gulp-sass": "^1.3.3",
+    "gulp-shell": "^0.4.0",
+    "gulp-util": "^3.0.4",
+    "jshint-stylish": "^1.0.1",  
   }
 }

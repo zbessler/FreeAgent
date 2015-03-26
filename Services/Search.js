@@ -18,18 +18,32 @@ var search = function(SearchObj, sport, location, date, position, leagueLvl, ski
     //console.log(SearchObj)
     lodash.each(SearchObj, function(g){
         var passed = true;
-        if(lodash.has(sport, 'sport')) passed = false;
+        if(lodash.has(sport, 'sport')) {
+            return false;
+        }
         //Check location
-        if(date)
-            if(g.availability[moment(date).day()] !== 1) passed = false;
-        if(position)
-            if(g.position !== position) passed = false;
-        if(leagueLvl)
-            if(g.leagueLvl !== leagueLvl) passed = false;
-        if(skillLvl)
-            if(g.skillLvl < skillLvl) passed = false;
+        if(date){
+            if(g.availability[moment(date).day()] !== 1) {
+                return false;
+            }
+        }
+        if(position){
+            if(g.position !== position) {
+                return false;
+            }
+        }
+        if(leagueLvl){
+            if(g.leagueLvl !== leagueLvl) {
+                return false;
+            }
+        }
+        if(skillLvl){
+            if(g.skillLvl < skillLvl) {
+                return false;
+            }
+        }
 
-        if(passed) retval.push(g);
+        retval.push(g);
     });
     console.log(retval);
     return retval;

@@ -5,11 +5,10 @@ var Sequelize = require('sequelize');
 var connection = null;
 var migrations = null;
 
-var logger = require('../util/logger');
+var logger = require('../util/Logger');
 
 // Models to user
-var User = null;
-var Offer = null;
+var Player = null;
 
 var daoMethods = {};
 
@@ -25,9 +24,9 @@ var init = {
         @param dbMigrations: Config object to specify how migrations should be handled
     **/
     connectAndStart : function(dbMigrations) {
-        connection = new Sequelize(config.management_db.database_name, config.management_db.username, config.management_db.password, {
-            dialect: config.management_db.dialect,
-            port:    config.management_db.port
+        connection = new Sequelize(config.database.database_name, config.database.username, config.database.password, {
+            dialect: config.database.dialect,
+            port:    config.database.port
         });
 
         migrations = dbMigrations;
@@ -44,7 +43,7 @@ var private_methods = {
     handleCompleteConnection: function(error){
         if (error) {
             // TODO: log this error
-            console.log('Unable to connect to the database: ', error);
+            logger.error('Unable to connect to the database: ', error);
             ConnectionDeferred.reject(error);
         } 
         else {
@@ -60,37 +59,15 @@ var private_methods = {
         Load the database models
     **/
     loadModels: function(){
-        var tags = ['ManagementDAO.js', 'loadModels'];
+        var tags = ['DAO.js', 'loadModels'];
         if(!connection){
             logger.warn('Could not connect to the DB', tags);
             // Throw warning, probably want to force developer to explicitally connect instead of connecting automatically
         }else{
 
-            var Event = require('./models/EventModels/Event');
-            Event.init.loadModel(connection);
-            daoMethods.eventMethods = Event.eventMethods;       
-
-            var FBAction = require('./models/Analytics/FacebookAction');
-            FBAction.init.loadModel(connection);
-            daoMethods.facebookActionMethods = FBAction.facebookActionMethods;
-
-            var FBActionType = require('./models/Analytics/FacebookActionType');
-            FBActionType.init.loadModel(connection);  
-
-            var OfferImpressions = require('./models/Analytics/OfferImpressions');
-            OfferImpressions.init.loadModel(connection);
-            daoMethods.offerImpressionMethods = OfferImpressions.offerImpressionMethods;
-
-            var UserAction = require('./models/Analytics/UserAction');
-            UserAction.init.loadModel(connection);
-            daoMethods.userActionMethods = UserAction.userActionMethods;
-
-            var UserActionType = require('./models/Analytics/UserActionType');
-            UserActionType.init.loadModel(connection);
-
-            var Visit = require('./models/Analytics/Visit');
-            Visit.init.loadModel(connection);
-            daoMethods.visitMethods = Visit.visitMethods;              
+            var Player = require('./Models/Player/Player');
+            Player.init.loadModel(connection);
+            daoMethods.playerMethods = Player.methods;       
 
         }
     },
@@ -102,7 +79,7 @@ var private_methods = {
         @param callback         Callback function to execute after the migration sync has taken place. Can be used to add new records, or update existing ones
     **/
     syncMigrations: function(forceDropTables, callback){
-        var tags = ['ManagementDAO.js', 'syncMigrations'];
+        var tags = ['DAO.js', 'syncMigrations'];
         if(!connection){
             logger.warn('Could not connect to the DB', tags);
             // Throw warning, probably want to force developer to explicitally connect instead of connecting automatically
