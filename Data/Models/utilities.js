@@ -1,5 +1,5 @@
 var lodash = require('lodash');
-var logger = require('../../util/logger');
+var logger = require('../../Utils/Logger');
 
 var methods = {
 

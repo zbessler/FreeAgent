@@ -4,11 +4,16 @@ var lodash = require('lodash');
 var util = require('../utilities');
 var connection = null;
 
-var logger = require('../../../util/Logger');
+var logger = require('../../../Utils/Logger');
 
 var Player = {};
 var Sports = {};
+var Ratings = {};
+var SubRequest = {};
+var SubHistory = {};
 
+var subRequest = require('./SubRequest');
+var subHistory = require('./SubHistory');
 var playerSports = require('./PlayerSports');
 var playerRating = require('./PlayerRating');
 
@@ -25,7 +30,14 @@ var init = {
             password: { type: Sequelize.STRING, allowNull: false },
             firstname: { type: Sequelize.STRING, allowNull: false },
             lastname: { type: Sequelize.STRING, allowNull: false },
-            email: { type: Sequelize.STRING, allowNull: false }
+            email: { type: Sequelize.STRING, allowNull: false },   // TODO: this is not secure, this MUST BE CHANGED
+            sunday: {type: Sequelize.BOOLEAN, allowNull: false },
+            monday: {type: Sequelize.BOOLEAN, allowNull: false },
+            tuesday: {type: Sequelize.BOOLEAN, allowNull: false },
+            wednesday: {type: Sequelize.BOOLEAN, allowNull: false },
+            thursday: {type: Sequelize.BOOLEAN, allowNull: false },
+            friday: {type: Sequelize.BOOLEAN, allowNull: false },
+            saturday: {type: Sequelize.BOOLEAN, allowNull: false },
 
         },
         {
@@ -33,12 +45,17 @@ var init = {
         });
 
         if(loadSubTables){
-            PlayerSports.init.loadModel(dbConnection);
-            PlayerSports = playerSports.PlayerSports;
+            playerSports.init.loadModel(dbConnection);
+            Sports = playerSports.PlayerSports;
 
-            PlayerRating.init.loadModel(dbConnection);
-            PlayerRating = playerRating.PlayerRating;
+            playerRating.init.loadModel(dbConnection);
+            Ratings = playerRating.PlayerRating;
 
+            subRequest.init.loadModel(dbConnection);
+            SubRequest = subRequest.SubRequest;
+
+            subHistory.init.loadModel(dbConnection);
+            SubHistory = subHistory.SubHistory;
         }
 
     }
@@ -48,7 +65,7 @@ var mainMethods = {
     searchById: function(id){
         var tags = ['Player.js', 'searchById'];
         var promise = q.defer();
-        PlayerRating.find({
+        Player.find({
             where: {
                 id: id
             }
@@ -61,7 +78,7 @@ var mainMethods = {
     searchByUsername: function(username){
         var tags = ['PlayerRating.js', 'searchByUsername'];
         var promise = q.defer();
-        PlayerRating.find({
+        Player.find({
             where: {
                 username: username
             }
@@ -75,7 +92,7 @@ var mainMethods = {
     searchByEmail: function(email){
         var tags = ['PlayerRating.js', 'searchByEmail'];
         var promise = q.defer();
-        PlayerRating.find({
+        Player.find({
             where: {
                 email: email
             }
@@ -134,8 +151,8 @@ var mainMethods = {
 
 var methods = {
     main: mainMethods,
-    rating: PlayerRating.methods || {},
-    sport : PlayerSport.methods || {},
+    rating: Ratings.methods || {},
+    sport : Sports.methods || {},
 };
 
 module.exports = {

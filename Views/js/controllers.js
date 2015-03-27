@@ -9,9 +9,19 @@ angular.module('FreeAgent.controllers', [])
   
 
 })
-.controller('home', function($scope) {
+.controller('player', function($scope, PlayerService) {
   
-  console.log('I loaded:home');
+  console.log('I loaded:player');
+
+  Player.CreatePlayer({
+        username: 'username',
+        password: 'password',
+        firstname: 'firstname',
+        lastname: 'lastname',
+        email: 'email',
+        sunday: [1,0,1,0,0,1,1],
+  });
+  
 
 })
 .controller('matches', function($scope) {

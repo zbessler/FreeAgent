@@ -1,11 +1,11 @@
-var config = require('../config/config.' + (process.env.NODE_ENV || 'local'));
+var config = require('../Configs/config.' + (process.env.NODE_ENV || 'local'));
 
 var q = require('q');
 var Sequelize = require('sequelize');
 var connection = null;
 var migrations = null;
 
-var logger = require('../util/Logger');
+var logger = require('../Utils/Logger');
 
 // Models to user
 var Player = null;
@@ -26,7 +26,8 @@ var init = {
     connectAndStart : function(dbMigrations) {
         connection = new Sequelize(config.database.database_name, config.database.username, config.database.password, {
             dialect: config.database.dialect,
-            port:    config.database.port
+            port:    config.database.port,
+            logging: console.log
         });
 
         migrations = dbMigrations;
@@ -66,7 +67,7 @@ var private_methods = {
         }else{
 
             var Player = require('./Models/Player/Player');
-            Player.init.loadModel(connection);
+            Player.init.loadModel(connection, true);
             daoMethods.playerMethods = Player.methods;       
 
         }

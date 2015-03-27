@@ -3,7 +3,7 @@
 angular.module('FreeAgent', [
     'ngRoute',
     'FreeAgent.filters',
-    'FreeAgent.services',
+    'PlayerService',
     'FreeAgent.directives',
     'FreeAgent.controllers'
 ])
@@ -27,9 +27,9 @@ angular.module('FreeAgent', [
         controller: 'team'
     });
     
-    // $routeProvider.when('/', {
-    //     templateUrl: 'templates/home.html',
-    //     controller: 'home'
-    // });
+    $routeProvider.when('/player', {
+        templateUrl: 'templates/player.html',
+        controller: 'player'
+    });
     $routeProvider.otherwise({redirectTo: '/splash'});
 });

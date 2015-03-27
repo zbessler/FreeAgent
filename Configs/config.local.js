@@ -1,5 +1,5 @@
 var url = '162.209.107.84';
-var port = 3000;
+var port = 9001;
 
 
 module.exports = {
@@ -12,7 +12,7 @@ module.exports = {
         password: '',
         host: 'localhost',
         port: 3306,
-        database_name: 'amexoffers',
+        database_name: 'FreeAgent',
         dialect: 'mysql' // Can be mysql, sqllite, mariadb, or postgress
     },
 

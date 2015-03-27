@@ -3,17 +3,18 @@ var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
-var config = require('./Configs/config.' + (process.env.NODE_ENV || 'local'));
-var logger = require('./Utils/Logger');
-
 var moment = require('moment');
 
-var data = require('./Services/Data');
+var config = require('./Configs/config.' + (process.env.NODE_ENV || 'local'));
+var logger = require('./Utils/Logger');
+var dao = require('./Data/DAO');
+
+var player = require('./Services/PlayerServices');
 var search = require('./Services/Search');
 
 
 var databaseMigrations = {
-    sync: process.env.SYNC, // Specify whether to sync the database with the current models
+    sync: process.env.SYNC, // Specify whether to sync the database with the current models   process.env.SYNC
     force: process.env.FORCE, // Specifies whether to drop the tables before creating them
     callback: function(err) { // a call back function to to run if you sync
         if (!!err) {
@@ -21,17 +22,20 @@ var databaseMigrations = {
         } 
     }
 };
+dao.init.connectAndStart(databaseMigrations);
 
 
 app.use(bodyParser());
 app.use(cookieParser());
 
 // Mount the routes to their appropriate location
-var routeMe = function(location, service) {
+var MountService = function(location, service) {
     var Router = express.Router('/');
     service.init.routes(Router);
     app.use('/'+location, Router);
 };
+
+MountService('player', player);
 
 app.use(express.static('public'));
 app.use('/bower_components/', express.static(__dirname + '/Views/bower_components/'));

@@ -3,7 +3,7 @@ var q = require('q');
 var connection = null;
 var lodash = require('lodash');
 var util = require('../utilities');
-var logger = require('../../../util/Logger');
+var logger = require('../../../Utils/Logger');
 
 var PlayerRating = null;
 
@@ -29,8 +29,8 @@ var init = {
 };
 
 var methods = {
-    searchByplayerid: function(playerid){
-        var tags = ['PlayerRating.js', 'searchByplayerid'];
+    searchByPlayerid: function(playerid){
+        var tags = ['PlayerRating.js', 'searchByPlayerid'];
         var promise;
         promise = q.defer();
         PlayerRating.find({

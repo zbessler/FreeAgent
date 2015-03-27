@@ -1,4 +1,3 @@
-var data = require('./Data');
 var lodash = require('lodash');
 var moment = require('moment');
 
